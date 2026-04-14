@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, FlatList, TouchableOpacity, Linking } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+// List of campus locations with map links 
 const LOCATIONS = [
   {
     id: '1',
@@ -35,16 +36,29 @@ const LOCATIONS = [
   },
 ];
 
+// Campus Map Screen Component
 export default function CampusMapScreen() {
+
+  // Function to open Google Maps link
   const openMap = (url: string) => {
     Linking.openURL(url);
   };
 
+  // Render each location card in the list
   const renderItem = ({ item }: { item: typeof LOCATIONS[0] }) => (
-    <TouchableOpacity style={styles.card} onPress={() => openMap(item.mapUrl)} activeOpacity={0.7}>
+    <TouchableOpacity 
+      style={styles.card} 
+      onPress={() => openMap(item.mapUrl)} 
+      activeOpacity={0.7}
+    >
       <View style={styles.cardContent}>
+        {/* Location name */}
         <Text style={styles.title}>{item.name}</Text>
+
+        {/* Location description */}
         <Text style={styles.description}>{item.description}</Text>
+
+        {/* Hint for user interaction */}
         <Text style={styles.mapLink}>Tap to open in Maps</Text>
       </View>
     </TouchableOpacity>
@@ -53,7 +67,11 @@ export default function CampusMapScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+
+        {/* Screen header */}
         <Text style={styles.header}> Campus Map & Facilities</Text>
+
+        {/* List of campus locations */}
         <FlatList
           data={LOCATIONS}
           keyExtractor={(item) => item.id}
@@ -66,6 +84,7 @@ export default function CampusMapScreen() {
   );
 }
 
+// Styles for Campus Map screen
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,

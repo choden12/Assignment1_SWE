@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, FlatList, StyleSheet, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+// List of announcements shown on Notice Board screen
 const ANNOUNCEMENTS = [
   { id: '1', title: 'Midterm Exam Schedule', date: 'Apr 20, 2026', body: 'Midterm exams will begin on May 5th. Check the notice board for room allocations.' },
   { id: '2', title: 'Big Event', date: 'Apr 18, 2026', body: 'Best of CST is on May 28th in the main auditorium. Register by April 25th.' },
@@ -10,21 +11,40 @@ const ANNOUNCEMENTS = [
 ];
 
 export default function NoticeBoardScreen() {
+
+  // Get screen width for responsive font sizing
   const { width } = useWindowDimensions();
+
+  // Adjust font sizes based on screen width (responsive design)
   const titleFontSize = width > 600 ? 24 : 18;
   const bodyFontSize = width > 600 ? 16 : 14;
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+
+        {/* List of announcements */}
         <FlatList
           data={ANNOUNCEMENTS}
           keyExtractor={(item) => item.id}
           renderItem={({ item }) => (
             <View style={styles.card}>
-              <Text style={[styles.title, { fontSize: titleFontSize }]}>{item.title}</Text>
-              <Text style={styles.date}>{item.date}</Text>
-              <Text style={[styles.body, { fontSize: bodyFontSize }]}>{item.body}</Text>
+
+              {/* Announcement title */}
+              <Text style={[styles.title, { fontSize: titleFontSize }]}>
+                {item.title}
+              </Text>
+
+              {/* Announcement date */}
+              <Text style={styles.date}>
+                {item.date}
+              </Text>
+
+              {/* Announcement body */}
+              <Text style={[styles.body, { fontSize: bodyFontSize }]}>
+                {item.body}
+              </Text>
+
             </View>
           )}
           contentContainerStyle={styles.list}
@@ -35,6 +55,7 @@ export default function NoticeBoardScreen() {
   );
 }
 
+// Screen styles
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,

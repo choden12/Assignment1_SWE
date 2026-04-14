@@ -5,8 +5,13 @@ import { useNavigation } from '@react-navigation/native';
 import { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { RootStackParamList } from '../navigation/types';
 
-type ContactsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'ContactDetail'>;
+// Define navigation type for Contacts screen (to ContactDetail screen)
+type ContactsScreenNavigationProp = NativeStackNavigationProp<
+  RootStackParamList,
+  'ContactDetail'
+>;
 
+// Contacts data list
 const CONTACTS = [
   { id: '1', name: 'Dean’s Office', phone: '+97517557867', email: 'dean.cst@rub.edu.bt' },
   { id: '2', name: 'Academic Affairs', phone: '+97517665438', email: 'academics@rub.edu.bt' },
@@ -17,15 +22,21 @@ const CONTACTS = [
 ];
 
 export default function ContactsScreen() {
+
+  // Navigation hook to move to ContactDetail screen
   const navigation = useNavigation<ContactsScreenNavigationProp>();
 
+  // Render each contact item in FlatList
   const renderItem = ({ item }: { item: typeof CONTACTS[0] }) => (
     <TouchableOpacity
       style={styles.contactItem}
       onPress={() => navigation.navigate('ContactDetail', { contact: item })}
       activeOpacity={0.7}
     >
+      {/* Contact name */}
       <Text style={styles.contactName}>{item.name}</Text>
+
+      {/* Contact phone number */}
       <Text style={styles.contactPhone}>{item.phone}</Text>
     </TouchableOpacity>
   );
@@ -33,6 +44,8 @@ export default function ContactsScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
+
+        {/* List of contacts */}
         <FlatList
           data={CONTACTS}
           keyExtractor={(item) => item.id}
@@ -45,6 +58,7 @@ export default function ContactsScreen() {
   );
 }
 
+// Screen styles
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,

@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet, ScrollView, useWindowDimensions } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
+// Weekly timetable data
 const TIMETABLE = [
   { day: 'Monday', courses: ['09:00 - 10:30 Discrete Mathematics', '11:00 - 12:30 Software Engineering', '14:00 - 15:30 Programming Lab'] },
   { day: 'Tuesday', courses: ['10:00 - 12:00 Database', '13:00 - 14:30 Operating system', '15:00 - 16:00 Academic Skills'] },
@@ -13,28 +14,45 @@ const TIMETABLE = [
 ];
 
 export default function ScheduleScreen() {
+
+  // Get screen width for responsive design
   const { width } = useWindowDimensions();
+
+  // Check if device is small for UI adjustments
   const isSmallDevice = width < 380;
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container}>
-        <Text style={[styles.header, isSmallDevice && styles.smallHeader]}> Weekly Schedule</Text>
+
+        {/* Screen header */}
+        <Text style={[styles.header, isSmallDevice && styles.smallHeader]}>
+          Weekly Schedule
+        </Text>
+
+        {/* Render timetable by day */}
         {TIMETABLE.map((item, idx) => (
           <View key={idx} style={styles.dayCard}>
+
+            {/* Day name */}
             <Text style={styles.dayTitle}>{item.day}</Text>
+
+            {/* Courses for the day */}
             {item.courses.map((course, cIdx) => (
               <View key={cIdx} style={styles.courseRow}>
                 <Text style={styles.courseText}>{course}</Text>
               </View>
             ))}
+
           </View>
         ))}
+
       </ScrollView>
     </SafeAreaView>
   );
 }
 
+// Screen styles
 const styles = StyleSheet.create({
   safeArea: {
     flex: 1,
