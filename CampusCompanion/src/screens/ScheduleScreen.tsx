@@ -3,11 +3,11 @@ import { View, Text, StyleSheet, ScrollView, useWindowDimensions } from 'react-n
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const TIMETABLE = [
-  { day: 'Monday', courses: ['09:00 - 10:30 Mathematics', '11:00 - 12:30 Physics', '14:00 - 15:30 Programming Lab'] },
-  { day: 'Tuesday', courses: ['10:00 - 12:00 Computer Science', '13:00 - 14:30 Chemistry', '15:00 - 16:00 Tutorial'] },
-  { day: 'Wednesday', courses: ['09:00 - 10:30 Mathematics', '11:00 - 13:00 Electronics Lab', '14:00 - 15:30 English'] },
-  { day: 'Thursday', courses: ['10:00 - 12:00 Physics', '13:00 - 14:30 Computer Science', '15:00 - 16:30 Workshop'] },
-  { day: 'Friday', courses: ['09:00 - 10:30 Chemistry', '11:00 - 12:30 Mathematics', '14:00 - 15:00 Seminar'] },
+  { day: 'Monday', courses: ['09:00 - 10:30 Discrete Mathematics', '11:00 - 12:30 Software Engineering', '14:00 - 15:30 Programming Lab'] },
+  { day: 'Tuesday', courses: ['10:00 - 12:00 Database', '13:00 - 14:30 Operating system', '15:00 - 16:00 Academic Skills'] },
+  { day: 'Wednesday', courses: ['09:00 - 10:30 Discrete Mathematics', '11:00 - 13:00 Electronics Lab', '14:00 - 15:30 Database '] },
+  { day: 'Thursday', courses: ['10:00 - 12:00 Database', '13:00 - 14:30 Software Engineering', '15:00 - 16:30 Academic Skills'] },
+  { day: 'Friday', courses: ['09:00 - 10:30 Programming lab', '11:00 - 12:30 Discrete Mathematics', '14:00 - 15:30 Operating System'] },
 ];
 
 export default function ScheduleScreen() {

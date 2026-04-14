@@ -15,7 +15,7 @@ export default function HomeScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView contentContainerStyle={[styles.container, isLandscape && styles.landscapeContainer]}>
-        <Text style={styles.title}>🏫 College of Science & Technology</Text>
+        <Text style={styles.title}> College of Science & Technology</Text>
         <Text style={styles.subtitle}>Campus Companion</Text>
 
         <View style={styles.menuGrid}>

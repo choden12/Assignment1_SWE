@@ -8,12 +8,12 @@ import { RootStackParamList } from '../navigation/types';
 type ContactsScreenNavigationProp = NativeStackNavigationProp<RootStackParamList, 'ContactDetail'>;
 
 const CONTACTS = [
-  { id: '1', name: 'Dean’s Office', phone: '+975 2 334567', email: 'dean.cst@cst.edu.bt' },
-  { id: '2', name: 'Academic Affairs', phone: '+975 2 334568', email: 'academics@cst.edu.bt' },
-  { id: '3', name: 'IT Support', phone: '+975 2 334569', email: 'itsupport@cst.edu.bt' },
-  { id: '4', name: 'Library', phone: '+975 2 334570', email: 'library@cst.edu.bt' },
-  { id: '5', name: 'Student Services', phone: '+975 2 334571', email: 'students@cst.edu.bt' },
-  { id: '6', name: 'Hostel Warden', phone: '+975 2 334572', email: 'hostel@cst.edu.bt' },
+  { id: '1', name: 'Dean’s Office', phone: '+97517557867', email: 'dean.cst@rub.edu.bt' },
+  { id: '2', name: 'Academic Affairs', phone: '+97517665438', email: 'academics@rub.edu.bt' },
+  { id: '3', name: 'IT Support', phone: '+97517658909', email: 'itsupport@rub.edu.bt' },
+  { id: '4', name: 'Library', phone: '+97517098909', email: 'library@rub.edu.bt' },
+  { id: '5', name: 'Student Service Officer(woman)', phone: '+97517358909', email: 'SSO@rub.edu.bt' },
+  { id: '6', name: 'Student Service Officer(man)', phone: '+97517058909', email: 'SSO@rub.edu.bt' },
 ];
 
 export default function ContactsScreen() {
