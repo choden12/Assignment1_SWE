@@ -5,9 +5,11 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 const TIMETABLE = [
   { day: 'Monday', courses: ['09:00 - 10:30 Discrete Mathematics', '11:00 - 12:30 Software Engineering', '14:00 - 15:30 Programming Lab'] },
   { day: 'Tuesday', courses: ['10:00 - 12:00 Database', '13:00 - 14:30 Operating system', '15:00 - 16:00 Academic Skills'] },
-  { day: 'Wednesday', courses: ['09:00 - 10:30 Discrete Mathematics', '11:00 - 13:00 Electronics Lab', '14:00 - 15:30 Database '] },
+  { day: 'Wednesday', courses: ['09:00 - 10:30 Discrete Mathematics', '11:00 - 13:00 : Discrete Mathematics', '14:00 - 15:30 Database '] },
   { day: 'Thursday', courses: ['10:00 - 12:00 Database', '13:00 - 14:30 Software Engineering', '15:00 - 16:30 Academic Skills'] },
   { day: 'Friday', courses: ['09:00 - 10:30 Programming lab', '11:00 - 12:30 Discrete Mathematics', '14:00 - 15:30 Operating System'] },
+  { day: 'Saturday', courses: ['01:00 - 02:30 : Campus cleaning'] },
+  { day: 'Sunday', courses: ['Free Hours'] },
 ];
 
 export default function ScheduleScreen() {
@@ -17,7 +19,7 @@ export default function ScheduleScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <ScrollView style={styles.container}>
-        <Text style={[styles.header, isSmallDevice && styles.smallHeader]}>📚 Weekly Schedule</Text>
+        <Text style={[styles.header, isSmallDevice && styles.smallHeader]}> Weekly Schedule</Text>
         {TIMETABLE.map((item, idx) => (
           <View key={idx} style={styles.dayCard}>
             <Text style={styles.dayTitle}>{item.day}</Text>

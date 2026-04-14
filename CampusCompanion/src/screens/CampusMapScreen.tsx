@@ -7,36 +7,31 @@ const LOCATIONS = [
     id: '1',
     name: 'Main Academic Block',
     description: 'All major lecture halls and faculty offices.',
-    icon: '🏛️',
-    mapUrl: 'https://maps.google.com/?q=27.4728,89.6394',
+    mapUrl: 'https://maps.app.goo.gl/XZuWmxx8dUrSLBx68',
   },
   {
     id: '2',
     name: 'Science & Technology Library',
     description: '24/7 study area and digital resources.',
-    icon: '📚',
-    mapUrl: 'https://maps.google.com/?q=27.4730,89.6390',
+    mapUrl: 'https://maps.app.goo.gl/XZuWmxx8dUrSLBx68',
   },
   {
     id: '3',
     name: 'Computer Science Lab',
     description: 'State-of-the-art computing facilities.',
-    icon: '💻',
-    mapUrl: 'https://maps.google.com/?q=27.4725,89.6392',
+    mapUrl: 'https://maps.app.goo.gl/XZuWmxx8dUrSLBx68',
   },
   {
     id: '4',
     name: 'Student Canteen',
     description: 'Food court and hangout spot.',
-    icon: '🍔',
-    mapUrl: 'https://maps.google.com/?q=27.4729,89.6388',
+    mapUrl: 'https://maps.app.goo.gl/XZuWmxx8dUrSLBx68',
   },
   {
     id: '5',
     name: 'Sports Complex',
     description: 'Indoor & outdoor games, gymnasium.',
-    icon: '⚽',
-    mapUrl: 'https://maps.google.com/?q=27.4732,89.6385',
+    mapUrl: 'https://maps.app.goo.gl/XZuWmxx8dUrSLBx68',
   },
 ];
 
@@ -47,11 +42,10 @@ export default function CampusMapScreen() {
 
   const renderItem = ({ item }: { item: typeof LOCATIONS[0] }) => (
     <TouchableOpacity style={styles.card} onPress={() => openMap(item.mapUrl)} activeOpacity={0.7}>
-      <Text style={styles.icon}>{item.icon}</Text>
       <View style={styles.cardContent}>
         <Text style={styles.title}>{item.name}</Text>
         <Text style={styles.description}>{item.description}</Text>
-        <Text style={styles.mapLink}>📍 Tap to open in Maps</Text>
+        <Text style={styles.mapLink}>Tap to open in Maps</Text>
       </View>
     </TouchableOpacity>
   );
@@ -59,8 +53,7 @@ export default function CampusMapScreen() {
   return (
     <SafeAreaView style={styles.safeArea}>
       <View style={styles.container}>
-        <Text style={styles.header}>🗺️ Campus Map & Facilities</Text>
-        <Text style={styles.subHeader}>Tap any location to open in Google Maps</Text>
+        <Text style={styles.header}> Campus Map & Facilities</Text>
         <FlatList
           data={LOCATIONS}
           keyExtractor={(item) => item.id}
